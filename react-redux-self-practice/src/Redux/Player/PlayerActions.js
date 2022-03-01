@@ -25,7 +25,7 @@ export const fetchPlayersFailure = (error) => {
   }
 }
 
-const fetchPlayers = () => {
+export const fetchPlayers = () => {
   return async function (dispatch) {
     dispatch(fetchPlayersRequest())
     await axios
@@ -41,4 +41,3 @@ const fetchPlayers = () => {
   }
 }
 
-export default fetchPlayers

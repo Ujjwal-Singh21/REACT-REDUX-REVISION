@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import fetchPlayers from '../Redux/Player/PlayerActions'
+import { fetchPlayers } from '../Redux'
 
 function PlayerContainer () {
   const playerData = useSelector(state => state.player)
@@ -33,6 +33,3 @@ function PlayerContainer () {
 }
 
 export default PlayerContainer
-
-{/* <li key={player.playerJerseyNumber}> 
-{player.playerJerseyNumber} {player.playerName} </li> */}

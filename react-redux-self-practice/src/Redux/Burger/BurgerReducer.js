@@ -1,7 +1,7 @@
 import { BUY_BURGER } from './BurgerActionTypes'
 
 const initialState = {
-  noOfBurgers: 125
+  noOfBurgers: 100
 }
 
 const burgerReducer = (state = initialState, action) => {
