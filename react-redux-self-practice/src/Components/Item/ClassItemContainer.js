@@ -1,14 +1,17 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { buyPizza, buyBurger } from '../Redux'
+import { buyPizza, buyBurger } from '../../Redux'
 
-class ItemContainer2 extends Component {
+class ClassItemContainer extends Component {
+
   constructor (props) {
     super(props)
   }
 
   render () {
+
     const { item, buyItem } = this.props
+
     return (
       <div>
         <h2> ItemContainer Class Component - {item} </h2>
@@ -18,7 +21,11 @@ class ItemContainer2 extends Component {
   }
 }
 
+// Connecting this Class Component with redux store
+//--------------------------------------------------
+
 const mapStateToProps = (state, ownProps) => {
+
   const itemSet = ownProps.pizza
     ? state.pizza.noOfPizzas
     : state.burger.noOfBurgers
@@ -29,13 +36,14 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
+
   const dispatchFunction = ownProps.pizza
-    ? data => dispatch(buyPizza(data))
-    : data => dispatch(buyBurger(data))
+    ? (data) => dispatch(buyPizza(data))
+    : (data) => dispatch(buyBurger(data))
 
   return {
     buyItem: dispatchFunction
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer2)
+export default connect(mapStateToProps, mapDispatchToProps)(ClassItemContainer)

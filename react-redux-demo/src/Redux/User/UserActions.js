@@ -22,6 +22,7 @@ export const fetchUsersFailure = (error) => {
 }
 
 export const fetchUsers = () => {
+  
   return (dispatch) => {
     dispatch(fetchUsersRequest())
     axios

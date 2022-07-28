@@ -7,6 +7,7 @@ const initialState = {
 }
 
 const userReducer = (state = initialState, action) => {
+  
   switch (action.type) {
     case FETCH_USERS_REQUEST:
       return {

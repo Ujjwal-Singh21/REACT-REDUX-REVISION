@@ -12,7 +12,7 @@ const initialState = {
   error: ''
 }
 
-//action constants
+//action constants/types
 const FETCH_USERS_REQUEST = 'FETCH_USERS_REQUEST'
 const FETCH_USERS_SUCCESS = 'FETCH_USERS_SUCCESS'
 const FETCH_USERS_FAILURE = 'FETCH_USERS_FAILURE'
@@ -40,7 +40,9 @@ function fetchUsersFailure (error) {
 
 // reducer
 const reducer = (state = initialState, action) => {
+
   switch (action.type) {
+
     case FETCH_USERS_REQUEST:
       return {
         ...state,
@@ -66,7 +68,16 @@ const reducer = (state = initialState, action) => {
   }
 }
 
+// Redux store
+const store = createStore(reducer, applyMiddleWare(thunkMiddleware))
+
+// Subscribe to Store
+store.subscribe(() => console.log('updated state data', store.getState()))
+
+
+// Action creator with thunkMiddleware functionality
 function fetchUsers () {
+
   return function (dispatch) {
     dispatch(fetchUsersRequest())
     axios
@@ -83,7 +94,6 @@ function fetchUsers () {
   }
 }
 
-const store = createStore(reducer, applyMiddleWare(thunkMiddleware))
-store.subscribe(() => console.log('updated state data', store.getState()))
+
 
 store.dispatch(fetchUsers())

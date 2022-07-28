@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPlayers } from '../Redux'
+import { fetchPlayers } from '../../Redux'
+
+// The connect() function connects a React component to a Redux store. It provides its connected component with the pieces of the data it needs from the store, and the functions it can use to dispatch actions to the store.
+//--------------------------------------------------------------------------------------------------------------
 
 class ClassPlayerContainer extends Component {
   constructor (props) {
@@ -12,7 +15,9 @@ class ClassPlayerContainer extends Component {
   }
 
   render () {
+
     const { playerData } = this.props
+
     return (
       <div>
         <h2> Player Container Class Component </h2>
@@ -44,11 +49,8 @@ function mapStateToProps (state) {
 
 function mapDispatchToProps (dispatch) {
   return {
-    dispatch: () => dispatch(fetchPlayers())
+    dispatch: dispatch
   }
 }
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ClassPlayerContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ClassPlayerContainer)

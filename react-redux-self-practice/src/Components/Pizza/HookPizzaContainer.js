@@ -1,10 +1,12 @@
 import React from 'react'
-import { buyPizza } from '../Redux'
+import { buyPizza } from '../../Redux'
 import { useSelector, useDispatch } from 'react-redux'
 
 function HookPizzaContainer () {
+
   const noOfPizzas = useSelector(state => state.pizza.noOfPizzas)
   const dispatch = useDispatch()
+  
   return (
     <div>
       <h2> HookPizzaContainer </h2>

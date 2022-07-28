@@ -73,13 +73,13 @@ const unSubscribe = store.subscribe(() => {
   console.log(store.getState())
 })
 
-// Functionality of using thunkMiddleware are as follows.
+// Functionality of using thunkMiddleware are as follows:
 // Allows an action creator to return a function instead of an action object.
-// Also allows that function to accept dispatch function from store and dispatch the
-// appropriate actions by calling action creators.
+// Also allows that function to accept dispatch function from store as its parameter and dispatch the appropriate actions by calling action creators.
 // That function need not to be pure and also cause sideEffects and make api calls.
 
 const fetchPosts = () => {
+  
   return function (dispatch) {
     dispatch(fetchPostsRequest())
     axios

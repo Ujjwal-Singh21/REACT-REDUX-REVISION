@@ -1,12 +1,12 @@
 import React from 'react'
-import { buyPizza } from '../Redux'
+import { buyPizza } from '../../Redux'
 import { connect } from 'react-redux'
 
-function PizzaContainer ({ noOfPizzas, buyPizza }) {
+function ClassPizzaContainer ({ noOfPizzas, buyPizza }) {
   return (
     <div>
-      <h2> Pizza Container </h2>
-      <h3> No of Pizzas - {noOfPizzas} </h3>
+      <h2> Class Pizza Container </h2>
+      <h3> No of Pizzas (class) - {noOfPizzas} </h3>
       <button type='button' onClick={() => buyPizza(2)}>
         Buy Your Pizza
       </button>
@@ -26,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(PizzaContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(ClassPizzaContainer)

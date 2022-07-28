@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { fetchPlayers } from '../Redux'
+import { fetchPlayers } from '../../Redux'
 
-function PlayerContainer () {
-  const playerData = useSelector(state => state.player)
+function HookPlayerContainer () {
+
+  const playerData = useSelector((state) => state.player)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -12,7 +13,7 @@ function PlayerContainer () {
 
   return (
     <div>
-      <h2 className='primary'> Player Container Component </h2>
+      <h2> Player Container Fn Component </h2>
       {
           playerData.loading ? 'Loading' : playerData.error ? 
           <h3> {playerData.error} </h3> :
@@ -32,4 +33,4 @@ function PlayerContainer () {
   )
 }
 
-export default PlayerContainer
+export default HookPlayerContainer

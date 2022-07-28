@@ -5,7 +5,9 @@ const initialState = {
 }
 
 const pizzaReducer = (state = initialState, action) => {
+
   switch (action.type) {
+    
     case BUY_PIZZA:
       return {
         ...state,

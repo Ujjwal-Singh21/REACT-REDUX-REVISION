@@ -1,8 +1,4 @@
-import {
-  FETCH_PLAYER_REQUEST,
-  FETCH_PLAYER_SUCCESS,
-  FETCH_PLAYER_FAILURE
-} from './PlayerActionTypes'
+import { FETCH_PLAYER_REQUEST, FETCH_PLAYER_SUCCESS, FETCH_PLAYER_FAILURE } from './PlayerActionTypes'
 
 const initialState = {
   loading: false,
@@ -11,7 +7,9 @@ const initialState = {
 }
 
 const playerReducer = (state = initialState, action) => {
+
   switch (action.type) {
+    
     case FETCH_PLAYER_REQUEST:
       return {
         ...state,

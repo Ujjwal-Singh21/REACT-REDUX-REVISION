@@ -1,17 +1,19 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { buyBurger, buyPizza } from '../Redux'
+import { buyBurger, buyPizza } from '../../Redux'
 
-function ItemContainer ({ item, buyItem}) {
+function FnItemContainer ({ item, buyItem}) {
+
   return (
     <div>
-      <h2> Item Container - {item} </h2>
+      <h2> Item Container Fn Component - {item} </h2>
       <button type='button' onClick={() => buyItem(1)}> Buy Item </button>
     </div>
   )
 }
 
 const mapStateToProps = (state, ownProps) => {
+  
   const itemSet = ownProps.pizza
     ? state.pizza.noOfPizzas
     : state.burger.noOfBurgers
@@ -31,4 +33,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ItemContainer)
+export default connect(mapStateToProps, mapDispatchToProps)(FnItemContainer)
