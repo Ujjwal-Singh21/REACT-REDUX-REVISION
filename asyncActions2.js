@@ -81,7 +81,9 @@ const unSubscribe = store.subscribe(() => {
 const fetchPosts = () => {
   
   return function (dispatch) {
+
     dispatch(fetchPostsRequest())
+
     axios
       .get('https://jsonplaceholder.typicode.com/posts')
       .then((response) => {

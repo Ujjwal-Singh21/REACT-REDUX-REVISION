@@ -3,15 +3,15 @@ const reduxLogger = require('redux-logger')
 
 const createStore = redux.createStore
 const combineReducers = redux.combineReducers
-const logger = reduxLogger.createLogger()
 const applyMiddleWare = redux.applyMiddleware
+const logger = reduxLogger.createLogger()
 
 const BUY_CAKE = 'BUY-CAKE'
 const BUY_ICECREAM = 'BUY_ICECREAM'
 
 {
   type: BUY_CAKE
-  info: 'First reudx action'
+  info: 'First redux action'
 }
 
 // action creator - its a function that returns an action.
@@ -30,6 +30,7 @@ function buyIceCream () {
 }
 
 // FIRST MAKING SINGLE STATE OBJECT TO PASS AS 1st ARGUMENT TO REDUCER
+//--------------------------------------------------------------------
 // const initialState = {
 //   numOfCakes: 10,
 //   numOfIceCreams: 20
@@ -44,7 +45,9 @@ const initialIceCreamState = {
 }
 
 // NOW MAKING OUR REDUCER AS AN ARROW FUNCTION
+//--------------------------------------------
 // const reducer = (state = initialState, action) => {
+
 //   switch (action.type) {
 //     case BUY_CAKE:
 //       return {
@@ -64,6 +67,7 @@ const initialIceCreamState = {
 // }
 
 const cakeReducer = (state = initialCakeState, action) => {
+
   switch (action.type) {
     case BUY_CAKE:
       return {
@@ -77,6 +81,7 @@ const cakeReducer = (state = initialCakeState, action) => {
 }
 
 const iceCreamReducer = (state = initialIceCreamState, action) => {
+  
   switch (action.type) {
     case BUY_ICECREAM:
       return {
