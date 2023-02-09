@@ -21,10 +21,13 @@ export const fetchUsersFailure = (error) => {
   }
 }
 
+// thunk middleware feature
 export const fetchUsers = () => {
   
   return (dispatch) => {
+
     dispatch(fetchUsersRequest())
+    
     axios
       .get('https://jsonplaceholder.typicode.com/users')
       .then((response) => {

@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { buyCake, buyIceCream } from '../Redux'
 
 function ItemContainer (props) {
+
   return (
     <div>
       <h2> Item - {props.item} </h2>
@@ -12,9 +13,7 @@ function ItemContainer (props) {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  const itemSet = ownProps.cake
-    ? state.cake.noOfCakes
-    : state.iceCream.noOfIceCreams
+  const itemSet = ownProps.cake ? state.cake.noOfCakes : state.iceCream.noOfIceCreams
 
   return {
     item: itemSet
@@ -22,9 +21,7 @@ const mapStateToProps = (state, ownProps) => {
 }
 
 const mapDispatchToProps = (dispatch, ownProps) => {
-  const dispatchFunction = ownProps.cake
-    ? () => dispatch(buyCake())
-    : () => dispatch(buyIceCream())
+  const dispatchFunction = ownProps.cake ? () => dispatch(buyCake()) : () => dispatch(buyIceCream())
 
   return {
     buyItem: dispatchFunction

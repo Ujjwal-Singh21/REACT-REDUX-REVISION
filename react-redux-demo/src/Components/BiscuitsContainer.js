@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { buyBiscuits } from '../Redux'
 
 function BiscuitsContainer (props) {
+
   const { noOfBiscuits, buyBiscuits } = props
 
   const [number, setNumber] = useState(1)
@@ -32,7 +33,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    buyBiscuits: number => dispatch(buyBiscuits(number))
+    buyBiscuits: (number) => dispatch(buyBiscuits(number))
   }
 }
 

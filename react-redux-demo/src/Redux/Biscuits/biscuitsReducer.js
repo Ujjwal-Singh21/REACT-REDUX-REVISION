@@ -5,7 +5,9 @@ const initialState = {
 }
 
 const biscuitsReducer = (state = initialState, action) => {
+
   switch (action.type) {
+    
     case BUY_BISCUITS:
       return {
         ...state,

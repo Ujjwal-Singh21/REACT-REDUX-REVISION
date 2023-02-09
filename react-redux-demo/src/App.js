@@ -5,7 +5,6 @@ import store from './Redux/store'
 import HookCakeContainer from './Components/HookCakeContainer'
 import IceCreamContainer from './Components/IceCreamContainer'
 import HookIceCreamContainer from './Components/HookIceCreamContainer'
-import NewCakeContainer from './Components/NewCakeContainer'
 import ItemContainer from './Components/ItemContainer'
 import UserContainer from './Components/UserContainer'
 import BiscuitsContainer from './Components/BiscuitsContainer'
@@ -14,17 +13,16 @@ function App () {
   return (
     <Provider store={store}>
       <div className='App'>
+
         {/* <UserContainer /> */}
 
-        <BiscuitsContainer />
+        {/* <BiscuitsContainer /> */}
         {/* <CakeContainer />
         <IceCreamContainer /> */}
 
         {/* <HookCakeContainer />
         <HookIceCreamContainer /> */}
 
-        {/* <NewCakeContainer /> */}
-        
          {/* <ItemContainer cake />
         <ItemContainer />  */}
       </div>

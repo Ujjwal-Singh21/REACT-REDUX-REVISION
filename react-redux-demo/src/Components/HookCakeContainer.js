@@ -12,7 +12,7 @@ function HookCakeContainer () {
 
   // minimized
   // ----------
-  const noOfCakes = useSelector(state => state.cake.noOfCakes)
+  const noOfCakes = useSelector((state) => state.cake.noOfCakes)
 
   const dispatch = useDispatch()
 
