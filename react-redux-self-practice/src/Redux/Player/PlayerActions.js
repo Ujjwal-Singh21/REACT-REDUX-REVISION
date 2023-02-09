@@ -1,5 +1,4 @@
 import { FETCH_PLAYER_REQUEST, FETCH_PLAYER_SUCCESS, FETCH_PLAYER_FAILURE } from './PlayerActionTypes'
-
 import axios from 'axios'
 
 // Action creator - Basically a function that returns an action object which has type and payload properties
@@ -24,8 +23,8 @@ export const fetchPlayersFailure = (error) => {
   }
 }
 
-// Action creator with thunk-middleware functinalities
-//----------------------------------------------------
+// Action creator with thunk-middleware functionalities
+//------------------------------------------------------
 export const fetchPlayers = () => {
   
   return async function (dispatch) {

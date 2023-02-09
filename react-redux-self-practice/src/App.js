@@ -28,7 +28,7 @@ function App () {
 
         {/* async api call with redux Practice */}
         {/* ------------------------------------------ */}
-        {/* <ClassPlayerContainer /> */}
+        <ClassPlayerContainer />
         {/* <HookPlayerContainer /> */}
 
         {/* With useSelector and useDispatch Hooks  */}

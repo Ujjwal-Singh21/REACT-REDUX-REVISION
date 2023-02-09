@@ -6,6 +6,7 @@ import { fetchPlayers } from '../../Redux'
 //--------------------------------------------------------------------------------------------------------------
 
 class ClassPlayerContainer extends Component {
+
   constructor (props) {
     super(props)
   }
@@ -22,9 +23,12 @@ class ClassPlayerContainer extends Component {
       <div>
         <h2> Player Container Class Component </h2>
         {
-          playerData.loading ? 'Loading' : playerData.error ? 
-          <h3> {playerData.error} </h3> :
+          playerData.loading ? 'Loading' : 
+
+          playerData.error ? <h3> {playerData.error} </h3> :
+
           playerData && playerData.players && 
+          
           playerData.players.map(player => {
               return(
                   <ul type='square' key={player.playerJerseyNumber}>
